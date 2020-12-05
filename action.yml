@@ -8,10 +8,10 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - id: install
+    - id: npm_install
       run: npm install -g snyk
       shell: bash
-    - id: output version
+    - id: output_version
       shell: bash
       run: echo ::set-output name=version::"$(snyk version)"
 branding:
