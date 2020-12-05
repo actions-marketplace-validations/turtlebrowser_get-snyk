@@ -10,7 +10,7 @@ runs:
   steps:
     - name: Install on Mac and Linux
       id: npm_install
-      run: ${{ runner.os != 'Windows' } && sudo npm install -g snyk
+      run: ${{ runner.os != 'Windows' }} && sudo npm install -g snyk
       shell: bash
     - name: Fill in output variable
       id: output_version
