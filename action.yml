@@ -11,11 +11,8 @@ runs:
     - name: Install on Mac and Linux
       id: npm_install
 #      run: ${{ runner.os != 'Windows' }} && sudo npm install -g snyk
-      run: sudo npm install -g snyk || echo "npm install not available"
+      run: sudo npm install -g snyk || powershell windows.ps1
       shell: bash
-    - name: Install on Windows
-      id: scoop_install
-      run: powershell Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh') || echo "Not Windows"
     - name: Fill in output variable
       id: output_version
       shell: bash
