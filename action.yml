@@ -14,6 +14,7 @@ runs:
       shell: bash
     - name: Add scoop shim path to path
       run: echo "/home/runner/scoop/shims/" >> $GITHUB_PATH
+      shell: bash
     - name: Fill in output variable
       id: output_version
       shell: bash
