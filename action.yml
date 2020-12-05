@@ -11,7 +11,7 @@ runs:
     - name: Install on Mac and Linux
       id: npm_install
 #      run: ${{ runner.os != 'Windows' }} && sudo npm install -g snyk
-      run: sudo npm install -g snyk || powershell .\windows.ps1
+      run: sudo npm install -g snyk || powershell ./windows.ps1
       shell: bash
     - name: Fill in output variable
       id: output_version
