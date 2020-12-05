@@ -12,15 +12,16 @@ runs:
       id: npm_install
       run: sudo npm install -g snyk || powershell ./windows.ps1
       shell: bash
+    - name: Ls
+      run: ls -ltr /home/runner/
+      shell: bash
     - name: Add scoop shim path to path
       run: echo "/home/runner/scoop/shims/" >> $GITHUB_PATH
       shell: bash
     - name: Fill in output variable
       id: output_version
       shell: bash
-      run: |
-        snyk version
-        echo "::set-output name=version::$(snyk version)"
+      run echo "::set-output name=version::$(snyk version)"
 branding:
   icon: "crosshair"
   color: "green"
