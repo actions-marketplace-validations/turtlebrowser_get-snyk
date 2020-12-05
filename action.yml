@@ -1,0 +1,19 @@
+name: 'Get Snyk'
+description: 'Installs Snyk'
+author: 'TurtleBrowser'
+outputs:
+  version:
+    description: "The version of Snyk which was installed"
+    value: ${{ steps.version.outputs.version }}
+runs:
+  using: "composite"
+  steps:
+    - id: install
+      run: npm install -g snyk
+      shell: bash
+    - id: output version
+      shell: bash
+      run: echo ::set-output name=version::"$(snyk version)"
+branding:
+  icon: "crosshair"
+  color: "green"
