@@ -4,12 +4,12 @@ author: 'TurtleBrowser'
 outputs:
   version:
     description: "The version of Snyk which was installed"
-    value: ${{ steps.version.outputs.version }}
+    value: ${{ steps.output_version.outputs.version }}
 runs:
   using: "composite"
   steps:
     - id: npm_install
-      if: ${{ runner.os == "Linux" }}
+      #if: ${{ runner.os == "Linux" }}
       run: sudo npm install -g snyk
       shell: bash
     - id: output_version
