@@ -8,15 +8,15 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - id: npm_install
-      #if: ${{ runner.os == "Linux" }}
+    - name: Install on Mac and Linux
+      if: runner.os != 'Windows'
+      id: npm_install
       run: sudo npm install -g snyk
       shell: bash
-    - id: output_version
+    - name: Fill in output variable
+      id: output_version
       shell: bash
-      run: |
-        snyk version
-        echo "::set-output name=version::$(snyk version)"
+      run: echo "::set-output name=version::$(snyk version)"
 branding:
   icon: "crosshair"
   color: "green"
