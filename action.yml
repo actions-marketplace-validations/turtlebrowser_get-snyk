@@ -12,7 +12,7 @@ runs:
       run: sudo npm install -g snyk || powershell $GITHUB_ACTION_PATH/windows.ps1
       shell: bash
     - name: Try to find the path
-      run: ls $GITHUB_ACTION_PATH
+      run: cd && pwd && ls $GITHUB_ACTION_PATH
       shell: bash
     - name: Add scoop shim path to path (Windows)
       run: echo "$GITHUB_ACTION_PATH/scoop/shims/" >> $GITHUB_PATH
