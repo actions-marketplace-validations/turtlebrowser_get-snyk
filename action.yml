@@ -9,7 +9,6 @@ runs:
   using: "composite"
   steps:
     - name: Install on Mac/Linux || Windows
-      id: npm_install
       run: sudo npm install -g snyk || powershell ./windows.ps1
       shell: bash
     - name: Add scoop shim path to path (Windows)
