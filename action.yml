@@ -15,7 +15,9 @@ runs:
     - name: Fill in output variable
       id: output_version
       shell: bash
-      run: echo "::set-output name=version::$(snyk version)"
+      run: |
+        snyk version
+        echo "::set-output name=version::$(snyk version)"
 branding:
   icon: "crosshair"
   color: "green"
