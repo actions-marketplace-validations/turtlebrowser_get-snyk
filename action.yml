@@ -11,6 +11,7 @@ runs:
     - name: Install on Mac and Linux
 #      if: runner.os != 'Windows'
       id: npm_install
+      continue-on-error: true
       run: sudo npm install -g snyk
       shell: bash
     - name: Fill in output variable
