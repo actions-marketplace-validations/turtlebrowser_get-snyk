@@ -17,8 +17,6 @@ jobs:
 
       - name: Get Snyk
         id: snyk
-        env:
-           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         uses: ./ # Uses an action in the root directory
 
       - name: Did we get snyk?
