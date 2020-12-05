@@ -8,14 +8,11 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: Install on Mac and Linux
+    - name: Install on Mac/Linux || Windows
       id: npm_install
       run: sudo npm install -g snyk || powershell ./windows.ps1
       shell: bash
-    - name: Ls
-      run: ls -ltr ~
-      shell: bash
-    - name: Add scoop shim path to path
+    - name: Add scoop shim path to path (Windows)
       run: echo "~/scoop/shims/" >> $GITHUB_PATH
       shell: bash
     - name: Fill in output variable
