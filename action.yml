@@ -13,7 +13,7 @@ runs:
       shell: bash
     - id: output_version
       shell: bash
-      run: echo ::set-output name=version::"$(snyk version)"
+      run: echo "::set-output name=version::"$(snyk version)""
 branding:
   icon: "crosshair"
   color: "green"
