@@ -9,7 +9,7 @@ runs:
   using: "composite"
   steps:
     - id: npm_install
-      run: npm install -g snyk
+      run: sudo npm install -g snyk
       shell: bash
     - id: output_version
       shell: bash
