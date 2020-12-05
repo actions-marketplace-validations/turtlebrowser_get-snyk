@@ -13,6 +13,7 @@ runs:
       shell: bash
     - name: Try to find the path
       run: ls $GITHUB_ACTION_PATH
+      shell: bash
     - name: Add scoop shim path to path (Windows)
       run: echo "$GITHUB_ACTION_PATH/scoop/shims/" >> $GITHUB_PATH
       shell: bash
