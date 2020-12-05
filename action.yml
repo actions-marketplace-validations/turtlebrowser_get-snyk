@@ -15,8 +15,7 @@ runs:
       shell: bash
     - name: Install on Windows
       id: scoop_install
-      run: Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh') || echo "Not Windows"
-      shell: powershell
+      run: powershell Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh') || echo "Not Windows"
     - name: Fill in output variable
       id: output_version
       shell: bash
