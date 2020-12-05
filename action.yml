@@ -9,6 +9,7 @@ runs:
   using: "composite"
   steps:
     - id: npm_install
+      if: ${{ runner.os == "Linux" }}
       run: sudo npm install -g snyk
       shell: bash
     - id: output_version
