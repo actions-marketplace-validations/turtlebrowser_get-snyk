@@ -1,3 +1,4 @@
+![CI](https://github.com/turtlebrowser/get-snyk/workflows/CI/badge.svg)
 # Get Snyk GitHub Action
 
 Gets the most recent Snyk - either by npm (Linux/MacOS) or scoop (Windows)
